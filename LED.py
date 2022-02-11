@@ -1,10 +1,20 @@
+# This is a script to test if the breadboard
+# is connected properly to the Raspberry Pi.
+
 import RPi.GPIO as GPIO
 import time
-GPIO.setmode(GPIO.BCM)
+
+OUTPUT_PIN = 18
+
 GPIO.setwarnings(False)
-GPIO.setup(18,GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(OUTPUT_PIN, GPIO.OUT)
+
 print("LED on")
-GPIO.output(18,GPIO.HIGH)
+
+GPIO.output(OUTPUT_PIN, GPIO.HIGH)
 time.sleep(1)
+
 print("LED off")
-GPIO.output(18,GPIO.LOW)
+
+GPIO.output(18, GPIO.LOW)
